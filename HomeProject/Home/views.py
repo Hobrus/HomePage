@@ -7,5 +7,11 @@ def home(request):
         'word1': 'kiss',
         'word2': 'me',
         'word3': 'baby',
+        'lst': ['apple', 'banana', 'cherry'],
+        'info': 'This is a test.'
     }
     return render(request, 'home.html', context)
+
+
+def example(request):
+    return render(request, 'example.html')

@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Простой HTML-документ</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Привет, мир!</h1>
     <p>Это пример HTML-документа</p>
     <p>{{ word1 }} {{ word2 }} {{ word3 }}</p>
-</body>
-</html>
+    <p>_________________________________________________</p>
+    <ul>
+        {% for el in lst %}
+            <li>{{ el }}</li>
+        {% empty %}
+            <li>Список пуст</li>
+        {% endfor %}
+    </ul>
+    <p>_________________________________________________</p>
+    {% if info %}
+        <p>{{ info }}</p>
+    {% else %}
+        <p>Информации нет</p>
+    {% endif %}
+{% endblock %}
