@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <li>
+        {% for el in goods %}
+        <ul>
+            Название товара: {{ el.name }}
+            Описание товара: {{ el.description }}
+            Цена товара: {{ el.price }}
+            Количество товара: {{ el.quantity }}
+        </ul>
+        {% empty %}
+            Нет элементов
+        {% endfor %}
+    </li>
+{% endblock %}
