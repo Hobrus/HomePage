@@ -1,0 +1,62 @@
+
+# Файлы Python
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyx
+*.pxi
+*.egg-info/
+*.egg
+# Директории Python
+**/__pycache__/
+venv/
+env/
+.venv/
+.env/
+.virtualenv/
+# Файлы Jupyter Notebook
+.ipynb_checkpoints/
+# Файлы конфигурации и секретов
+config.yml
+.env.local
+.env.*.local
+*.pem
+*.key
+# Файлы IDE и редакторов
+.vscode/
+.idea/
+*.sublime-workspace
+# Логи и временные файлы
+*.log
+*.tmp
+*.bak
+*.swp
+# Файлы зависимостей
+poetry.lock
+Pipfile.lock
+# Файлы покрытия тестами
+.coverage
+.coverage.*
+htmlcov/
+# Файлы документации
+docs/
+doc/
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
+project_files.txt
+# Другие специфичные для проекта файлы и директории
+.git
+*.onnx
+*.mp3
+*.json
+*.txt
+alembic/
+*.ini
+*.conf
+*.xls
+    
+*.sqlite
+*.sqlite3
