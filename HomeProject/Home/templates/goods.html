@@ -4,6 +4,9 @@
     <li>
         {% for el in goods %}
         <ul>
+            {% if el.image %}
+                <img src="{% static el.image.url %}" alt="Изображение товара">
+            {% endif %}
             Название товара: {{ el.name }}
             Описание товара: {{ el.description }}
             Цена товара: {{ el.price }}
