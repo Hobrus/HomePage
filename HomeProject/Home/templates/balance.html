@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance page</title>
+</head>
+<body>
+    <h1>Баланс</h1>
+    <p>Ваш баланс: {{ balance }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <label>
+            <input type="number" name="amount" placeholder="Сумма">
+        </label>
+        <button type="submit">Пополнить</button>
+    </form>
+    <p><a href="{% url 'home' %}">На главную</a></p>
+</body>
+</html>

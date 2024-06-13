@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegisterForm
-from .models import Good
+from .models import Good, Balance
 
 
 # Create your views here.
@@ -35,6 +35,7 @@ def register_view(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             register_form.save()
+            Balance.objects.create(user=register_form.instance)
             redirect('home')
     else:
         register_form = RegisterForm()
@@ -67,3 +68,15 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
+def balance_view(request):
+    user = request.user
+    balance_to_show = Balance.objects.get(user=user)
+    if request.method == 'POST':
+        amount = request.POST.get('amount')
+        new_balance = Balance.objects.get(user=user)
+        new_balance.amount += int(amount)
+        new_balance.save()
+        return redirect('home')
+    return render(request, 'balance.html', {'balance': balance_to_show})
